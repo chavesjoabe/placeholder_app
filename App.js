@@ -1,9 +1,14 @@
 import * as React from "react";
-import Splash from "./src/pages/splash";
+import { StatusBar, View } from "react-native";
+import Header from './src/Header'
 
 
 export default function App() {
   return (
-        <Splash />
+    <>
+    <StatusBar style="auto" />
+    <Header />
+    </>
+    
   );
 }
