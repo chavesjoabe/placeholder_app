@@ -16,33 +16,38 @@ export default function Form() {
     return (
         <View style={styles.container}>
             <TextInput
-                placeholder="Email ou Usuário"
+                placeholder="Nome"
+                keyboardType="default"
+                style={styles.inputContainer}
+            />
+            <TextInput
+                placeholder="Email"
                 keyboardType="email-address"
                 style={styles.inputContainer}
             />
             <TextInput
-                placeholder="Password"
-                keyboardType="default"
-                secureTextEntry={true}
+                placeholder="CPF"
+                keyboardType="numeric"
+                style={styles.inputContainer}
+            />
+            <TextInput
+                placeholder="Data de nascimento"
+                keyboardType="numeric"
+                style={styles.inputContainer}
+            />
+            <TextInput
+                placeholder="Celular"
+                keyboardType="numeric"
                 style={styles.inputContainer}
             />
 
             <View style={styles.btnContainer}>
                 <EdtButton
-                    text="ENTRAR"
+                    text="PRÓXIMO"
                     type="success"
                     callback={handlePressLoginBtn}
                 />
-                <EdtButton
-                    text="REGISTRAR-SE"
-                    type="default"
-                    callback={handlePressRegisterBtn}
-                />
-                <EdtButton
-                    text="LIGAR PARA CENTRAL"
-                    type="default"
-                    callback={handlePressCallCenterBtn}
-                />
+                <EdtButton text="CANCELAR" callback={handlePressRegisterBtn} />
             </View>
         </View>
     );
@@ -64,6 +69,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
     },
     btnContainer: {
-        marginTop: 45,
+        marginTop: 25,
     },
 });

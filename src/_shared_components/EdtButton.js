@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     successBtn: {
-        width: 380,
-        height: 80,
+        width: 360,
+        height: 75,
         backgroundColor: '#3773E0',
         alignItems: 'center',
         padding: 28,
@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
         color: '#FFF',
     },
     defaultBtn: {
-        width: 380,
-        height: 80,
+        width: 360,
+        height: 75,
         backgroundColor: '#FFF',
         alignItems: 'center',
         padding: 28,

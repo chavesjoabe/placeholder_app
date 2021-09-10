@@ -6,7 +6,7 @@ export default function LogoContainer() {
         <View style={styles.container}>
             <Image
                 style={styles.logo}
-                source={require('../../assets/black_logo.png')}
+                source={require('../assets/black_logo.png')}
             />
         </View>
     );
@@ -14,13 +14,12 @@ export default function LogoContainer() {
 
 const styles = StyleSheet.create({
     container: {
-        height: 297,
         backgroundColor: '#FFFAFA',
         alignItems: 'center',
-        padding: 0,
+        marginBottom: 25,
     },
     logo: {
-        width: 380,
-        marginTop: 222,
+        width: 360,
+        resizeMode: 'contain',
     },
 });
