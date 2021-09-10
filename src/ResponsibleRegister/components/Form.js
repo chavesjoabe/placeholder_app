@@ -33,7 +33,7 @@ export default function Form() {
 
             <View style={styles.btnContainer}>
                 <EdtButton
-                    text="PRÓXIMO"
+                    text="CADASTRAR"
                     type="success"
                     callback={handlePressLoginBtn}
                 />
