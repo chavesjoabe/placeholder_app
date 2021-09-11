@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, FlatList, StyleSheet, TextInput, ScrollView, View} from 'react-native';
+import { Alert, StyleSheet, View} from 'react-native';
 import Button from '../../_shared_components/Button';
 
 const handlePressHomeBtn = () => {
