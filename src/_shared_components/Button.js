@@ -11,21 +11,26 @@ export default function Button(props) {
                 return require('../assets/callcenter.png');
             case "responsible":
                 return require('../assets/responsible.png');
+            case "help":
+                return require('../assets/help.png');
         }
     }
 
+    const helpTextStyle = StyleSheet.compose(styles.text, styles.txtColor)
+    const helpViewStyle = StyleSheet.compose(styles.container, styles.bgColor)
+    
     return (
         <TouchableWithoutFeedback 
             onPress={() => {
                 props.callback();
         }}>
             <View
-                style={styles.container}
+                style={props.name === "help" ? helpViewStyle : styles.container}
             >
                 <Image
                 source={buttonIcon()}
                 />
-                <Text style={styles.text}
+                <Text style={props.name === "help" ? helpTextStyle : styles.text}
                 >
                     {props.text}
                 </Text>
@@ -51,4 +56,19 @@ const styles = StyleSheet.create({
         marginTop: 5,
         textTransform: 'uppercase'
     },
+    txtColor: {
+        color: 'black',
+        marginTop: 10
+    },
+    bgColor: {
+        backgroundColor: 'white',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    }
 });

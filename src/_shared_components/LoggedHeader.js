@@ -1,7 +1,6 @@
 import * as React from "react";
 import {  Image, StyleSheet, View } from "react-native";
 
-
 export default function LoggedHeader() {
   return (
     <View style={styles.container}>
@@ -16,7 +15,6 @@ const styles = StyleSheet.create({
         height: 130,
         backgroundColor: "#3773E0",
         position: 'relative',
-        marginBottom: 30
     },
     logo: {
         position: 'absolute',

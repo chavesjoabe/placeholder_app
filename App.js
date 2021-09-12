@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { StatusBar, View } from 'react-native';
-import ResponsibleRegister from './src/ResponsibleRegister';
+import Home from './src/Home';
 
 export default function App() {
     return (
         <>
             <StatusBar style="auto" />
-            <ResponsibleRegister />
+            <Home />
         </>
     );
 }
