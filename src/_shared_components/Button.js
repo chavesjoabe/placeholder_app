@@ -13,11 +13,33 @@ export default function Button(props) {
                 return require('../assets/responsible.png');
             case "help":
                 return require('../assets/help.png');
+            case "help-check":
+                return require('../assets/help.png');
+        }
+    }
+
+    buttonContainer = () => {
+        switch (props.name) {
+            case "help":
+                return helpViewStyle
+            case "help-check":
+                return helpCheckViewStyle
+            default:
+                return styles.container
+        }
+    }
+
+    buttonTextStyle = () => {
+        if(props.name == "help" || props.name == "help-check") {
+            return helpTextStyle
+        } else {
+            return styles.text
         }
     }
 
     const helpTextStyle = StyleSheet.compose(styles.text, styles.txtColor)
     const helpViewStyle = StyleSheet.compose(styles.container, styles.bgColor)
+    const helpCheckViewStyle = StyleSheet.compose(styles.container, styles.containerHelpCheck)
     
     return (
         <TouchableWithoutFeedback 
@@ -25,12 +47,12 @@ export default function Button(props) {
                 props.callback();
         }}>
             <View
-                style={props.name === "help" ? helpViewStyle : styles.container}
+                style={buttonContainer()}
             >
                 <Image
                 source={buttonIcon()}
                 />
-                <Text style={props.name === "help" ? helpTextStyle : styles.text}
+                <Text style={buttonTextStyle()}
                 >
                     {props.text}
                 </Text>
@@ -70,5 +92,17 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
-    }
+    },    
+    containerHelpCheck: {
+        height: 135,
+        backgroundColor: 'white',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
 });
