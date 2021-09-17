@@ -29,7 +29,7 @@ export default function Button(props) {
         }
     }
 
-    buttonTextStyle = () => {
+    const buttonTextStyle = () => {
         if(props.name == "help" || props.name == "help-check") {
             return helpTextStyle
         } else {
