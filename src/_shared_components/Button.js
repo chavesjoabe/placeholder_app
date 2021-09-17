@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableWithoutFeedback, View, Image } from 'react-n
 
 export default function Button(props) {  
     
-    buttonIcon = () => {
+    const buttonIcon = () => {
         switch (props.name) {
             case "home":
                 return require('../assets/home.png');
@@ -18,7 +18,7 @@ export default function Button(props) {
         }
     }
 
-    buttonContainer = () => {
+    const buttonContainer = () => {
         switch (props.name) {
             case "help":
                 return helpViewStyle
