@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core';
 import * as React from 'react';
-import { Alert, StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import EdtButton from '../../_shared_components/EdtButton';
 
 export default function Form() {
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#FFFAFA',
         alignItems: 'center',
+        marginBottom: 20,
     },
     inputContainer: {
         width: 360,
@@ -60,6 +61,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
     },
     btnContainer: {
-        marginTop: 190,
+        marginTop: 120,
     },
 });

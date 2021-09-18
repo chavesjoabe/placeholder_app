@@ -1,34 +1,33 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableWithoutFeedback, View, Image } from 'react-native';
+import {
+    StyleSheet,
+    Text,
+    TouchableWithoutFeedback,
+    View,
+    Image,
+} from 'react-native';
 
-export default function Button(props) {  
-    
-    buttonIcon = () => {
+export default function Button(props) {
+    const buttonIcon = () => {
         switch (props.name) {
-            case "home":
+            case 'home':
                 return require('../assets/home.png');
-            case "callcenter":
+            case 'callcenter':
                 return require('../assets/callcenter.png');
-            case "responsible":
+            case 'responsible':
                 return require('../assets/responsible.png');
         }
-    }
+    };
 
     return (
-        <TouchableWithoutFeedback 
+        <TouchableWithoutFeedback
             onPress={() => {
                 props.callback();
-        }}>
-            <View
-                style={styles.container}
-            >
-                <Image
-                source={buttonIcon()}
-                />
-                <Text style={styles.text}
-                >
-                    {props.text}
-                </Text>
+            }}
+        >
+            <View style={styles.container}>
+                <Image source={buttonIcon()} />
+                <Text style={styles.text}>{props.text}</Text>
             </View>
         </TouchableWithoutFeedback>
     );
@@ -43,12 +42,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 10,
         color: '#FFF',
-        marginBottom: 20
+        marginBottom: 20,
     },
     text: {
         color: 'white',
         fontSize: 18,
         marginTop: 5,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
     },
 });

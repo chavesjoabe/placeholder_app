@@ -14,6 +14,7 @@ export default function LogoContainer() {
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: 35,
         backgroundColor: '#FFFAFA',
         alignItems: 'center',
         marginBottom: 25,

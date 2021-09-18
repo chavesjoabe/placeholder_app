@@ -5,6 +5,7 @@ import Login from './Login';
 import UserRegister from './UserRegister';
 import PasswordRegister from './PasswordRegister';
 import ResponsibleRegister from './ResponsibleRegister';
+import MenuHelp from './MenuHelp';
 
 const stack = createNativeStackNavigator();
 
@@ -30,6 +31,7 @@ function Routes() {
                     name="ResponsibleRegister"
                     component={ResponsibleRegister}
                 />
+                <stack.Screen name="MenuHelp" component={MenuHelp} />
             </stack.Navigator>
         </NavigationContainer>
     );

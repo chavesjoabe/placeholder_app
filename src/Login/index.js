@@ -1,21 +1,22 @@
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Form from './components/Form';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import LogoContainer from '../_shared_components/LogoContainer';
+import Form from './components/Form';
 
 export default function Login() {
     return (
         <>
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
+                <View style={styles.container} />
                 <LogoContainer />
                 <Form />
-            </View>
+            </ScrollView>
         </>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 220,
+        height: 120,
     },
 });

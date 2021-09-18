@@ -7,7 +7,7 @@ export default function Form() {
     const navigation = useNavigation();
 
     const handlePressLoginBtn = () => {
-        Alert.alert('Button ENTRAR');
+        navigation.navigate('MenuHelp');
     };
     const handlePressRegisterBtn = () => {
         navigation.navigate('UserRegister');
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#FFFAFA',
         alignItems: 'center',
+        marginBottom: 20,
     },
     inputContainer: {
         width: 360,

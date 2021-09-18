@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#FFFAFA',
         alignItems: 'center',
+        marginBottom: 20,
     },
     inputContainer: {
         width: 360,
@@ -56,6 +57,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
     },
     btnContainer: {
-        marginTop: 280,
+        marginTop: 220,
     },
 });
