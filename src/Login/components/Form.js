@@ -1,18 +1,21 @@
 import * as React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Alert, StyleSheet, TextInput, View } from 'react-native';
 import EdtButton from '../../_shared_components/EdtButton';
 
-const handlePressLoginBtn = () => {
-    Alert.alert('Button ENTRAR');
-};
-const handlePressRegisterBtn = () => {
-    Alert.alert('Button REGISTRAR');
-};
-const handlePressCallCenterBtn = () => {
-    Alert.alert('Button LIGAR_PARA_CENTRAL');
-};
-
 export default function Form() {
+    const navigation = useNavigation();
+
+    const handlePressLoginBtn = () => {
+        Alert.alert('Button ENTRAR');
+    };
+    const handlePressRegisterBtn = () => {
+        navigation.navigate('UserRegister');
+    };
+    const handlePressCallCenterBtn = () => {
+        Alert.alert('Button LIGAR_PARA_CENTRAL');
+    };
+
     return (
         <View style={styles.container}>
             <TextInput

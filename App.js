@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { StatusBar, View } from 'react-native';
-import ResponsibleRegister from './src/ResponsibleRegister';
+import Routes from './src/Routes';
 
 export default function App() {
     return (
         <>
             <StatusBar style="auto" />
-            <ResponsibleRegister />
+            <Routes />
         </>
     );
 }
