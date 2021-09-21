@@ -3,15 +3,15 @@ import { Text, StyleSheet, View } from "react-native";
 
 //TODO: Remover a última breakline
 
-export default function History({ localizations }) {
+export default function Historic({ localizations }) {
   return (
-    <View style={styles.history}>
-        <View style={styles.historyHeader} >
-            <Text style={styles.historyHeaderText}>Histórico</Text>    
+    <View style={styles.historic}>
+        <View style={styles.historicHeader} >
+            <Text style={styles.historicHeaderText}>Histórico</Text>    
         </View>
-        <View style={styles.historyBody}>
+        <View style={styles.historicBody}>
         {localizations?.slice(0, 3).map((item) => (
-            <View key={item.id}><Text  style={styles.historyBodyText}>{item.localization}</Text><View style={styles.breakLine} /></View>
+            <View key={item.id}><Text  style={styles.historicBodyText}>{item.localization}</Text><View style={styles.breakLine} /></View>
         ))}
         </View> 
     </View> 
@@ -20,7 +20,7 @@ export default function History({ localizations }) {
 }
 
 const styles = StyleSheet.create({
-  history: {
+  historic: {
     width: 360,
     height: 223,
     borderRadius: 10,
@@ -36,23 +36,23 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
 },
-  historyHeader: {
+  historicHeader: {
     height: 48,
     backgroundColor: '#87A8E4',
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
     justifyContent: 'center'
   },
-  historyHeaderText: {
+  historicHeaderText: {
       fontSize: 20,
       color: 'white',
       marginLeft: 15
   },
-  historyBody: {
+  historicBody: {
       marginLeft: 15, 
       marginRight: 15
   },
-  historyBodyText: {
+  historicBodyText: {
       color: '#737373',
       fontSize: 20,
       marginBottom: 12,
