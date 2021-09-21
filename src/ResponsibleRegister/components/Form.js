@@ -1,18 +1,19 @@
+import { useNavigation } from '@react-navigation/core';
 import * as React from 'react';
-import { Alert, StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import EdtButton from '../../_shared_components/EdtButton';
 
-const handlePressLoginBtn = () => {
-    Alert.alert('Button ENTRAR');
-};
-const handlePressRegisterBtn = () => {
-    Alert.alert('Button REGISTRAR');
-};
-const handlePressCallCenterBtn = () => {
-    Alert.alert('Button LIGAR_PARA_CENTRAL');
-};
-
 export default function Form() {
+    const navigation = useNavigation();
+
+    const handlePressRegisterBtn = () => {
+        navigation.navigate('Login');
+    };
+
+    const handlePressReturnBtn = () => {
+        navigation.navigate('PasswordRegister');
+    };
+
     return (
         <View style={styles.container}>
             <TextInput
@@ -35,9 +36,9 @@ export default function Form() {
                 <EdtButton
                     text="CADASTRAR"
                     type="success"
-                    callback={handlePressLoginBtn}
+                    callback={handlePressRegisterBtn}
                 />
-                <EdtButton text="CANCELAR" callback={handlePressRegisterBtn} />
+                <EdtButton text="CANCELAR" callback={handlePressReturnBtn} />
             </View>
         </View>
     );
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#FFFAFA',
         alignItems: 'center',
+        marginBottom: 20,
     },
     inputContainer: {
         width: 360,
@@ -59,6 +61,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
     },
     btnContainer: {
-        marginTop: 190,
+        marginTop: 120,
     },
 });
