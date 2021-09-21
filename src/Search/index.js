@@ -1,14 +1,18 @@
 import * as React from 'react';
 import { StyleSheet, View, Alert, Text, Image, TouchableWithoutFeedback} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import LoggedHeader from '../_shared_components/LoggedHeader';
 import FindButton from '../_shared_components/FindButton';
 
-const handlePressFindBtn = () => {
-    Alert.alert('Button FIND');
-}
-
 export default function Search() {
+
+    const navigation = useNavigation();
+
+    const handlePressFindBtn = () => {
+        Alert.alert('Button FIND');
+    }
+
     return (
         <View style={{flex: 1}}>
             <LoggedHeader />
@@ -23,7 +27,7 @@ export default function Search() {
                         <View style={styles.btnContainer}>
                         <TouchableWithoutFeedback 
                             onPress={() => {
-                                Alert.alert('Button YES');
+                                navigation.navigate('Directions');
                             }
                         }>
                             <View style={styles.btnYes}> 
