@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ScrollView, StyleSheet, View, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import LoggedHeader from '../_shared_components/LoggedHeader';
 import Button from '../_shared_components/Button';
@@ -25,15 +26,18 @@ const localizations = [
     },
 ]
 
-const handlePressHelpBtn = () => {
-    Alert.alert('Button HELP');
-}
-
-const handlePressFindBtn = () => {
-    Alert.alert('Button FIND');
-}
-
 export default function Home() {
+
+    const navigation = useNavigation();
+
+    const handlePressHelpBtn = () => {
+        navigation.navigate('MenuHelp');
+    };
+
+    const handlePressFindBtn = () => {
+        navigation.navigate('Search');
+    }
+
     return (
         <ScrollView>
             <LoggedHeader />

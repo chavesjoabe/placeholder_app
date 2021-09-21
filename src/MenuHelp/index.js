@@ -1,21 +1,24 @@
 import * as React from 'react';
 import { ScrollView, Alert, StyleSheet, View} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import LoggedHeader from '../_shared_components/LoggedHeader';
 import Button from '../_shared_components/Button';
 
-const handlePressHomeBtn = () => {
-    Alert.alert('Button PAGINA_INICIAL');
-};
-const handlePressCallCenterBtn = () => {
-    Alert.alert('Button LIGAR_PARA_CENTRAL');
-};
-const handlePressResponsibleBtn = () => {
-    Alert.alert('Button RESPONSIBLE');
-};
-
-
 export default function MenuHelp() {
+
+    const navigation = useNavigation();
+
+    const handlePressHomeBtn = () => {
+        navigation.navigate('Home');
+    };
+    const handlePressCallCenterBtn = () => {
+        Alert.alert('Button LIGAR_PARA_CENTRAL');
+    };
+    const handlePressResponsibleBtn = () => {
+        Alert.alert('Button RESPONSIBLE');
+    };
+
     return (
         <ScrollView>
             <LoggedHeader />

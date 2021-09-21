@@ -1,13 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { ScrollView, Alert, StyleSheet, View, Image, Text, TouchableWithoutFeedback} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import LoggedHeader from '../_shared_components/LoggedHeader';
 import Button from '../_shared_components/Button';
-
-const handlePressHomeBtn = () => {
-    Alert.alert('Button PAGINA_INICIAL');
-};
 
 const directionsIcon = (directions) => {
     switch (directions) {
@@ -23,6 +20,12 @@ const directionsIcon = (directions) => {
 }
 
 export default function Directions() {
+    const navigation = useNavigation();
+
+    const handlePressHomeBtn = () => {
+        navigation.navigate('Home');
+    };
+
     const distance = 50 
     const destiny = 'Shopping ABC'
     const [plate, setPlate] = useState("Placa XYZ123")

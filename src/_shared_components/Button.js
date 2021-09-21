@@ -7,12 +7,8 @@ import {
     Image,
 } from 'react-native';
 
-<<<<<<< HEAD
 export default function Button(props) {  
     
-=======
-export default function Button(props) {
->>>>>>> main
     const buttonIcon = () => {
         switch (props.name) {
             case 'home':
@@ -55,7 +51,6 @@ export default function Button(props) {
         <TouchableWithoutFeedback
             onPress={() => {
                 props.callback();
-<<<<<<< HEAD
         }}>
             <View
                 style={buttonContainer()}
@@ -67,13 +62,6 @@ export default function Button(props) {
                 >
                     {props.text}
                 </Text>
-=======
-            }}
-        >
-            <View style={styles.container}>
-                <Image source={buttonIcon()} />
-                <Text style={styles.text}>{props.text}</Text>
->>>>>>> main
             </View>
         </TouchableWithoutFeedback>
     );

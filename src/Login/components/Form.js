@@ -7,7 +7,7 @@ export default function Form() {
     const navigation = useNavigation();
 
     const handlePressLoginBtn = () => {
-        navigation.navigate('MenuHelp');
+        navigation.navigate('CheckPlace');
     };
     const handlePressRegisterBtn = () => {
         navigation.navigate('UserRegister');

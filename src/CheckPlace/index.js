@@ -1,16 +1,26 @@
 import * as React from 'react';
 import { StyleSheet, View, Alert, Image, TouchableWithoutFeedback, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import LoggedHeader from '../_shared_components/LoggedHeader';
 import Button from '../_shared_components/Button';
 
 import Pulse from 'react-native-pulse';
 
-const handlePressHelpBtn = () => {
-    Alert.alert('Button HELP');
-}
 
-export default function CheckPlace() {
+export default function CheckPlace() {  
+
+    const navigation = useNavigation();
+
+    setInterval(
+        function(){ 
+            navigation.navigate('Home'); 
+        }, 7000);
+
+    const handlePressHelpBtn = () => {
+        navigation.navigate('MenuHelp');
+    };
+
     return (
         <View style={{flex: 1}}>
             <LoggedHeader />
