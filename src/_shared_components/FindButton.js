@@ -5,7 +5,7 @@ import Pulse from 'react-native-pulse';
 export default function FindButton(props) {
     return (
         <View style={styles.btnFindContainer}>
-            {props.pulse && <Pulse color={'#BBD3FF'} numPulses={5} diameter={400} speed={50} duration={2000} />}
+            {props.pulse && <Pulse color={'#BBD3FF'} numPulses={5} diameter={400} speed={10} duration={2000} />}
             <View style={styles.btnBg} />
             <TouchableWithoutFeedback 
                 onPress={() => {
@@ -22,13 +22,15 @@ export default function FindButton(props) {
 
 const styles = StyleSheet.create({
     btnFindContainer: {
+        flex: 1,
         alignContent: 'center',
+        maxHeight: 190
     },
     btnBg: {
         width: '100%',
         position: 'absolute',
         bottom: 0,
-        zIndex: 2,
+        zIndex: 0,
         height: '50%',
         backgroundColor: 'white',
         shadowColor: 'black',

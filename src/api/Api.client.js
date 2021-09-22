@@ -17,5 +17,10 @@ class ApiClient {
         const { data } = response;
         return data;
     }
+
+    async searchPlace(place) {
+        const { data } = await this.request.get(`/places/search/${place}`)
+        return data
+    }
 }
 export default new ApiClient();

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { ScrollView, Alert, StyleSheet, View, Image, Text, TouchableWithoutFeedback} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import * as Speech from 'expo-speech';
 
 import LoggedHeader from '../_shared_components/LoggedHeader';
 import Button from '../_shared_components/Button';
@@ -19,7 +20,7 @@ const directionsIcon = (directions) => {
     }
 }
 
-export default function Directions() {
+export default function Directions({ route: { params } }) {
     const navigation = useNavigation();
 
     const handlePressHomeBtn = () => {
@@ -27,9 +28,16 @@ export default function Directions() {
     };
 
     const distance = 50 
-    const destiny = 'Shopping ABC'
-    const [plate, setPlate] = useState("Placa XYZ123")
-    const [directions, setDirections] = useState("right") 
+    const destiny = params.name
+    const [plate, setPlate] = useState("Placa 493021")
+    const [directions, setDirections] = useState("right")
+
+    const speak = () => {
+        const thingToSay = `Destino ${params.name} Localização atual Placa 493021`;
+        Speech.speak(thingToSay, {
+            language: 'pt-BR'
+        });
+    };
 
     return (
         <ScrollView>
@@ -56,9 +64,7 @@ export default function Directions() {
                         Localização atual: {plate}
                     </Text>
                     <View style={styles.btnListenArea}>
-                        <TouchableWithoutFeedback onPress={() => {
-                            Alert.alert('Button LISTEN');
-                        }}>
+                        <TouchableWithoutFeedback onPress={speak}>
                         <Image
                         source={require('../assets/listen.png')}
                         />

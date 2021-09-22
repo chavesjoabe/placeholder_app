@@ -1,3 +1,4 @@
+import 'expo-dev-client';
 import * as React from 'react';
 import { StatusBar } from 'react-native';
 import Routes from './src/Routes';
