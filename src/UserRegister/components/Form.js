@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { useState } from 'react';
 import { Alert, StyleSheet, TextInput, View } from 'react-native';
+import { TextInputMask } from 'react-native-masked-text';
 import ApiClient from '../../api/Api.client';
 import EdtButton from '../../_shared_components/EdtButton';
 
@@ -68,18 +69,31 @@ export default function Form() {
                     setPassword(value);
                 }}
             />
-            <TextInput
-                placeholder="Data de nascimento"
+            <TextInputMask
                 keyboardType="numeric"
+                type={'custom'}
+                options={{
+                    mask: '9999-99-99',
+                }}
                 style={styles.inputContainer}
+                value={date}
                 onChangeText={(value) => {
                     setDate(value);
                 }}
+                placeholder="Data de Nascimento - AAAA-MM-DD"
             />
-            <TextInput
+
+            <TextInputMask
                 placeholder="Celular"
                 keyboardType="numeric"
+                type={'cel-phone'}
+                options={{
+                    maskType: 'BRL',
+                    withDDD: true,
+                    dddMask: '(11)',
+                }}
                 style={styles.inputContainer}
+                value={mobile}
                 onChangeText={(value) => {
                     setMobile(value);
                 }}
