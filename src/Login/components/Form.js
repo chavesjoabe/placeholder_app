@@ -1,13 +1,29 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Alert, StyleSheet, TextInput, View } from 'react-native';
 import EdtButton from '../../_shared_components/EdtButton';
+import ApiClient from '../../api/Api.client';
 
 export default function Form() {
     const navigation = useNavigation();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handlePressLoginBtn = () => {
-        navigation.navigate('CheckPlace');
+    const handlePressLoginBtn = async () => {
+        const user = {
+            email: email,
+            password: password,
+        };
+
+        const logged = await ApiClient.createSession(user);
+        if (logged) {
+            if (typeof logged === 'string') {
+                return Alert.alert('Usuário nao encontrado');
+            }
+            return navigation.navigate('CheckPlace');
+        } else {
+            return Alert.alert('Campos inválidos ou não preenchidos');
+        }
     };
     const handlePressRegisterBtn = () => {
         navigation.navigate('UserRegister');
@@ -19,15 +35,24 @@ export default function Form() {
     return (
         <View style={styles.container}>
             <TextInput
-                placeholder="Email ou Usuário"
+                autoCapitalize="none"
+                placeholder="Email"
                 keyboardType="email-address"
                 style={styles.inputContainer}
+                onChangeText={(value) => {
+                    setEmail(value);
+                }}
+                value={email}
             />
             <TextInput
+                id="password"
+                autoCapitalize="none"
                 placeholder="Password"
                 keyboardType="default"
                 secureTextEntry={true}
                 style={styles.inputContainer}
+                onChangeText={(value) => setPassword(value)}
+                value={password}
             />
 
             <View style={styles.btnContainer}>
